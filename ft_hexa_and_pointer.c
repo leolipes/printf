@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa.c                                       :+:      :+:    :+:   */
+/*   ft_hexa_and_pointer.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leolipes <leolipes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 11:55:33 by leolipes          #+#    #+#             */
-/*   Updated: 2021/09/13 12:00:14 by leolipes         ###   ########.fr       */
+/*   Updated: 2021/09/13 15:55:50 by leolipes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ int	ft_hexaux(size_t nb, char *base)
 	int		quantchar;
 
 	quantchar = 0;
-	if (nb < 0)
-	{
-		quantchar += ft_putchar('-');
-		nb *= -1;
-	}
 	if (nb >= 16)
 		quantchar += ft_hexaux(nb / 16, base);
 	quantchar += ft_putchar((char)(base[nb % 16]));

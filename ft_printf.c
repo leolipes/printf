@@ -6,7 +6,7 @@
 /*   By: leolipes <leolipes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:59:30 by leolipes          #+#    #+#             */
-/*   Updated: 2021/09/13 12:00:09 by leolipes         ###   ########.fr       */
+/*   Updated: 2021/09/13 15:59:18 by leolipes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int	ft_printf(const char *input, ...)
 			count++;
 		}
 	}
+	va_end (args);
 	return (quantchar);
 }
