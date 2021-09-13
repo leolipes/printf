@@ -6,27 +6,34 @@
 #    By: leolipes <leolipes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/10 16:50:19 by leolipes          #+#    #+#              #
-#    Updated: 2021/09/10 16:50:20 by leolipes         ###   ########.fr        #
+#    Updated: 2021/09/13 12:09:40 by leolipes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+SRCR	=	ft_printf.c \
+			ft_printf_utils.c \
+			ft_hexa_and_pointer.c
 
-SRC = ft_printf.c
-OBJ = $(SRC:.c=.o)
+OBJS	= ${SRCR:.c=.o}
 
-all: $(NAME)
+NAME	= libftprintf.a
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+CC		= clang
+RM		= rm -f
 
-%.o: %.c
-	clang -Wall -Werror -Wextra -c $< -o $@
+CFLAGS	= -Wall -Wextra -Werror
+
+${NAME}:	${OBJS}
+			ar rc ${NAME} ${OBJS}
+
+all:		${NAME}
 
 clean:
-	rm -f $(OBJ)
+			${RM} ${OBJS}
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+			${RM} ${NAME}
 
-re: fclean all
+re:			fclean all
+
+.PHONY:		all clean fclean re

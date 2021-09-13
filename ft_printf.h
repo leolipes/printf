@@ -6,7 +6,7 @@
 /*   By: leolipes <leolipes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:07:42 by leolipes          #+#    #+#             */
-/*   Updated: 2021/09/11 21:02:25 by leolipes         ###   ########.fr       */
+/*   Updated: 2021/09/13 12:13:08 by leolipes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	ft_printf(const char *input, ...);
+int		ft_printf(const char *input, ...);
+int		ft_check_flags(char c, va_list args);
+int		ft_flag_u(unsigned int nbr);
+int		ft_hexaux(size_t nb, char *base);
+int		ft_puthexa(unsigned int nb, char *base);
+int		ft_pointer(void *ptr);
+int		ft_putnbr(int nb);
+int		ft_putchar(char c);
+int		t_putstr(char *s);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *str);
 
 #endif
